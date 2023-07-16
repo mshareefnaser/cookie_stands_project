@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from .models import Thing
+from .models import Cookie
 
 
-class ThingSerializer(serializers.ModelSerializer):
+class CookieSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Thing
+        model = Cookie
         fields = "__all__"
