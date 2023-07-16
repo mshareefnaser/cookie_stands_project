@@ -18,13 +18,13 @@ class CookieDetailView(LoginRequiredMixin, DetailView):
 class CookieUpdateView(LoginRequiredMixin, UpdateView):
     template_name = "cookies/cookie_update.html"
     model = Cookie
-    fields = "__all__"
+    fields = ["location", "description", "owner", "hourly_sales", "minimum_customers_per_hour", "maximum_customers_per_hour"]
 
 
 class CookieCreateView(LoginRequiredMixin, CreateView):
     template_name = "cookies/cookie_create.html"
     model = Cookie
-    fields = ["name", "rating", "reviewer"] # "__all__" for all of them
+    fields = ["location", "description", "owner", "hourly_sales", "minimum_customers_per_hour", "maximum_customers_per_hour"]
 
 
 class CookieDeleteView(LoginRequiredMixin, DeleteView):
