@@ -1,33 +1,33 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Thing
+from .models import Cookie
 
 
-class ThingListView(LoginRequiredMixin, ListView):
-    template_name = "things/thing_list.html"
-    model = Thing
-    context_object_name = "things"
+class CookieListView(LoginRequiredMixin, ListView):
+    template_name = "cookies/cookie_list.html"
+    model = Cookie
+    context_object_name = "cookies"
 
 
-class ThingDetailView(LoginRequiredMixin, DetailView):
-    template_name = "things/thing_detail.html"
-    model = Thing
+class CookieDetailView(LoginRequiredMixin, DetailView):
+    template_name = "cookies/cookie_detail.html"
+    model = Cookie
 
 
-class ThingUpdateView(LoginRequiredMixin, UpdateView):
-    template_name = "things/thing_update.html"
-    model = Thing
+class CookieUpdateView(LoginRequiredMixin, UpdateView):
+    template_name = "cookies/cookie_update.html"
+    model = Cookie
     fields = "__all__"
 
 
-class ThingCreateView(LoginRequiredMixin, CreateView):
-    template_name = "things/thing_create.html"
-    model = Thing
+class CookieCreateView(LoginRequiredMixin, CreateView):
+    template_name = "cookies/cookie_create.html"
+    model = Cookie
     fields = ["name", "rating", "reviewer"] # "__all__" for all of them
 
 
-class ThingDeleteView(LoginRequiredMixin, DeleteView):
-    template_name = "things/thing_delete.html"
-    model = Thing
-    success_url = reverse_lazy("thing_list")
+class CookieDeleteView(LoginRequiredMixin, DeleteView):
+    template_name = "cookies/cookie_delete.html"
+    model = Cookie
+    success_url = reverse_lazy("cookie_list")
