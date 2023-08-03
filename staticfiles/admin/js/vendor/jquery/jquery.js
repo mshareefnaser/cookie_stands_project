@@ -7239,7 +7239,7 @@ Tween.propHooks = {
 };
 
 // Support: IE <=9 only
-// Panic based approach to setting cookies on disconnected nodes
+// Panic based approach to setting cookie_stand on disconnected nodes
 Tween.propHooks.scrollTop = Tween.propHooks.scrollLeft = {
 	set: function( tween ) {
 		if ( tween.elem.nodeType && tween.elem.parentNode ) {
@@ -10268,7 +10268,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 			// Save back as free
 			if ( s[ callbackName ] ) {
 
-				// Make sure that re-using the options doesn't screw cookies around
+				// Make sure that re-using the options doesn't screw cookie_stand around
 				s.jsonpCallback = originalSettings.jsonpCallback;
 
 				// Save the callback name for future use
