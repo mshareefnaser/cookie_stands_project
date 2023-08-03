@@ -21,7 +21,7 @@ from django.views.generic.base import TemplateView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/v1/cookies/", include("cookies.urls")),
+    path("api/v1/cookie_stand/", include("cookie_stand.urls")),
     path("api-auth/", include("rest_framework.urls")),
     path(
         "api/token/",
@@ -29,11 +29,11 @@ urlpatterns = [
         name="token_obtain_pair",
     ),
     path(
-        "api/token/refresh/",
+        "api/token/refresh",
         jwt_views.TokenRefreshView.as_view(),
         name="token_refresh",
     ),
-    path("cookies/", include("cookies.urls_front")),
+    path("cookie_stand/", include("cookie_stand.urls_front")),
     path("", TemplateView.as_view(template_name="home.html"), name="home"),
     path("about/", TemplateView.as_view(template_name="about.html"), name="about"),
     path("accounts/", include("accounts.urls")),
